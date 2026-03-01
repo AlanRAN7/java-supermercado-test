@@ -1,10 +1,12 @@
 package com.zavniex_prueba.PruebaTecnicaSupermercado.dto;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 
 //DTOs are used to a intern communication
 public class SucursalDTO {
