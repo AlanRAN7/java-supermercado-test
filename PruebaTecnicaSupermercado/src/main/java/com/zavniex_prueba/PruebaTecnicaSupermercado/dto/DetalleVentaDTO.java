@@ -7,9 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class DetalleVentaDTO {
-    private Long productoId;
-    private String productoNombre;
-    private Integer cantidad;
-    private Double precioUnitario;
-    private Double subTotal;
+    private Long id;
+    private String nombreProd;
+    private Integer cantProd;
+    private Double precio;
+    private Double subtotal;
 }

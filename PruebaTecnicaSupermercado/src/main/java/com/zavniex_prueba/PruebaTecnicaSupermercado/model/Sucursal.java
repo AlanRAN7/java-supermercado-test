@@ -3,10 +3,7 @@ package com.zavniex_prueba.PruebaTecnicaSupermercado.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 // Ya los getters y setters están creados
 @Getter @Setter
@@ -14,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 // Nos agrega el constructor con argumentos
 @AllArgsConstructor
+@Builder
 public class Sucursal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -31,13 +31,26 @@ public class Mapper {
 
         var detalle = venta.getDetalle().stream().map(det ->
                 DetalleVentaDTO.builder()
-                        .productoId(det.getProd().getId())
-                        .productoNombre(det.getProd().getNombre())
-                        .cantidad(det.getCantProd())
-                        .precioUnitario(det.getPrecio())
-                        .subTotal(det.getPrecio().multiply(Double.valueOf(det.getCantProd())))
+                        .id(det.getProd().getId())
+                        .nombreProd(det.getProd().getNombre())
+                        .cantProd(det.getCantProd())
+                        .precio(det.getPrecio())
+                        .subtotal(det.getPrecio() * det.getCantProd())
                         .build()
         ).collect(Collectors.toList());
+
+        var total = detalle.stream()
+                .map(DetalleVentaDTO::getSubtotal)
+                .reduce(0.0, Double::sum);
+
+        return VentaDTO.builder()
+                .id(venta.getId())
+                .fecha(venta.getFecha())
+                .idSucursal(venta.getSucursal().getId())
+                .estado(venta.getEstado())
+                .detalle(detalle)
+                .total(total)
+                .build();
     }
 
     // MAPEO DE Sucursal A SucursalDTO

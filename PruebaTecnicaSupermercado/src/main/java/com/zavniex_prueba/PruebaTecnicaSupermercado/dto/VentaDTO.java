@@ -16,10 +16,10 @@ public class VentaDTO {
     private String estado;
 
     // Datos de la Sucursal
-    private Long IdSucursal;
+    private Long idSucursal;
 
     // Lista de Detalles
-    private List<DetalleVentaDTO> detalles;
+    private List<DetalleVentaDTO> detalle;
 
     //Total de la Venta
     private Double total;
