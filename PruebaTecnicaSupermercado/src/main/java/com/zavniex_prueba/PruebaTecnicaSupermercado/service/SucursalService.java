@@ -35,7 +35,7 @@ public class SucursalService implements ISucursalService {
     @Override
     public SucursalDTO createSucursal(SucursalDTO sucursalDto) {
 
-        var sucursal = Sucursal.builder()
+        Sucursal sucursal = Sucursal.builder()
                 .nombre(sucursalDto.getNombre())
                 .direccion(sucursalDto.getDireccion())
                 .build();
