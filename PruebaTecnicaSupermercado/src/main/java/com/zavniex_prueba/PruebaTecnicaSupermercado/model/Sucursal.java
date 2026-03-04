@@ -1,5 +1,6 @@
 package com.zavniex_prueba.PruebaTecnicaSupermercado.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,6 +13,7 @@ import lombok.*;
 // Nos agrega el constructor con argumentos
 @AllArgsConstructor
 @Builder
+@Entity
 public class Sucursal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
